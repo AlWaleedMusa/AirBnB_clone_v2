@@ -66,4 +66,3 @@ class FileStorage:
         if obj in self.__objects and obj != None:
             key = obj.__class__.__name__ + "." + obj.id
             del self.__objects[key]
-            self.save()
