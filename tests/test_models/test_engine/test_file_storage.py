@@ -117,3 +117,11 @@ class test_fileStorage(unittest.TestCase):
         obj = BaseModel()
         storage.new(obj)
         self.assertIn(obj, storage._FileStorage__objects.values())
+
+    def test_delete(self):
+        """Test if delete method deletes object from __objects"""
+        storage = FileStorage()
+        obj = BaseModel()
+        storage.new(obj)
+        storage.delete(obj)
+        self.assertNotIn(obj, storage._FileStorage__objects.values())
