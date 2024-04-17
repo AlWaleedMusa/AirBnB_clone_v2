@@ -3,6 +3,21 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker, scoped_session
 from models.base_model import Base
 import os
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place 
+from models.review import Review
+
+classes = {
+    "User": User,
+    "State": State,
+    "City": City,
+    "Amenity": Amenity,
+    "Place": Place,
+    "Review": Review
+}
 
 
 class DBStorage:
@@ -35,14 +50,13 @@ class DBStorage:
                 key = "{}.{}".format(type(obj).__name__, obj.id)
                 objects[key] = obj
         else:
-            classes = [User, State, City, Amenity, Place, Review]
             for cls in classes:
                 query = self.__session.query(cls).all()
                 for obj in query:
                     key = "{}.{}".format(type(obj).__name__, obj.id)
                     objects[key] = obj
         return objects
-
+    
     def new(self, obj):
         """Add the object to the current database session"""
         self.__session.add(obj)
