@@ -41,7 +41,7 @@ def is_number(n):
 def number_template(n):
     """This function returns a string when the route /number_template/<n> is hit
     and n is an integer"""
-    return render_template("5-number.html", n=n)
+    return render_template("5-number.html", n=n) if isinstance(n, int) else None
 
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def number_odd_or_even(n):
