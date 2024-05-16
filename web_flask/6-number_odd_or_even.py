@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 from flask import Flask, render_template
@@ -24,6 +23,7 @@ def c_is_fun(text):
     and replacing _ with spaces"""
     return "C " + text.replace("_", " ")
 
+
 @app.route("/python/<text>", strict_slashes=False)
 @app.route("/python", strict_slashes=False)
 def python_is_cool(text="is cool"):
@@ -31,11 +31,13 @@ def python_is_cool(text="is cool"):
     and replacing _ with spaces"""
     return "Python " + text.replace("_", " ")
 
+
 @app.route("/number/<int:n>", strict_slashes=False)
 def is_number(n):
     """This function returns a string when the route /number/<n> is hit
     and n is an integer"""
     return "{} is a number".format(n) if isinstance(n, int) else None
+
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
@@ -43,11 +45,14 @@ def number_template(n):
     and n is an integer"""
     return render_template("5-number.html", n=n) if isinstance(n, int) else None
 
+
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def number_odd_or_even(n):
     """This function returns a string when the route /number_odd_or_even/<n> is hit
     and n is an integer"""
-    return render_template("6-number_odd_or_even.html", n=n, type="even" if n % 2 == 0 else "odd")
+    return render_template(
+        "6-number_odd_or_even.html", n=n, type="even" if n % 2 == 0 else "odd"
+    )
 
 
 if __name__ == "__main__":
