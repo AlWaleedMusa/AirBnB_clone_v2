@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.teardown_appcontext
 def close_session(exception):
-    """Remove the current SQLAlchemy Session"""
+    """close the current SQLAlchemy Session"""
     storage.close()
 
 
