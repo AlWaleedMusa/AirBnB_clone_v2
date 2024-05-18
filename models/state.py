@@ -23,7 +23,6 @@ class State(BaseModel, Base):
         """Initializes the state"""
         super().__init__(*args, **kwargs)
 
-
     if os.getenv("HBNB_TYPE_STORAGE") != "db":
         @property
         def cities(self):
@@ -33,4 +32,3 @@ class State(BaseModel, Base):
                 if city.state_id == self.id:
                     c_list.append(city)
             return c_list
-        
