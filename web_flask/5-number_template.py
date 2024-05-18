@@ -42,8 +42,8 @@ def is_number(n):
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
-    """This function returns a string when the route /number_template/<n> is hit
-    and n is an integer"""
+    """This function returns a string when the
+    route /number_template/<n> is hit and n is an integer"""
     return render_template("5-number.html", n=n)
 
 
