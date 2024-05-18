@@ -13,7 +13,6 @@ def close_session(exception):
     """Remove the current SQLAlchemy Session"""
     storage.close()
 
-
 @app.route("/states_list", strict_slashes=False)
 def states_list():
     """Display an HTML page with a list of all of the State objects"""
