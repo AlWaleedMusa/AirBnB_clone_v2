@@ -24,6 +24,7 @@ def c_is_fun(text):
     and replacing _ with spaces"""
     return "C " + text.replace("_", " ")
 
+
 @app.route("/python/<text>", strict_slashes=False)
 @app.route("/python", strict_slashes=False)
 def python_is_cool(text="is cool"):
@@ -31,11 +32,13 @@ def python_is_cool(text="is cool"):
     and replacing _ with spaces"""
     return "Python " + text.replace("_", " ")
 
+
 @app.route("/number/<int:n>", strict_slashes=False)
 def is_number(n):
     """This function returns a string when the route /number/<n> is hit
     and n is an integer"""
     return "{} is a number".format(n) if isinstance(n, int) else None
+
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
