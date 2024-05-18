@@ -14,12 +14,12 @@ def close_session(exception):
     storage.close()
 
 
-@app.route('/states_list', strict_slashes=False)
+@app.route("/states_list", strict_slashes=False)
 def states_list():
     """Display an HTML page with a list of all of the State objects"""
     states = storage.all(State).values()
-    return render_template('7-states_list.html', states=states)
+    return render_template("7-states_list.html", states=states)
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
