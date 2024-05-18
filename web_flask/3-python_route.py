@@ -34,4 +34,5 @@ def python_is_cool(text="is cool"):
 
 
 if __name__ == "__main__":
+    """main function"""
     app.run()

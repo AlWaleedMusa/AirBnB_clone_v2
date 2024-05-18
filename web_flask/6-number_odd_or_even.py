@@ -58,4 +58,5 @@ def number_odd_or_even(n):
 
 
 if __name__ == "__main__":
+    """main function"""
     app.run()

@@ -26,4 +26,5 @@ def c_is_fun(text):
 
 
 if __name__ == "__main__":
+    """main function"""
     app.run()

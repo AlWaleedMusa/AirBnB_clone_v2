@@ -41,4 +41,5 @@ def is_number(n):
 
 
 if __name__ == "__main__":
+    """main function"""
     app.run()
