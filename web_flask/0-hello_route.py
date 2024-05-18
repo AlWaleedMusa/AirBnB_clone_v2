@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module starts a Flask web application"""
 
 from flask import Flask
 
@@ -12,4 +13,5 @@ def hello_hbnb():
 
 
 if __name__ == "__main__":
+    """Main function"""
     app.run()
