@@ -22,4 +22,5 @@ def states_list():
 
 
 if __name__ == "__main__":
+    """Externally visible server with port 5000"""
     app.run(host="0.0.0.0", port=5000)
