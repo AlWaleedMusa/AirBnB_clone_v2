@@ -44,7 +44,9 @@ def is_number(n):
 def number_template(n):
     """This function returns a string when the
     route /number_template/<n> is hit and n is an integer"""
-    return render_template("5-number.html", n=n) if isinstance(n, int) else None
+    return render_template(
+        "5-number.html", n=n
+        ) if isinstance(n, int) else None
 
 
 if __name__ == "__main__":
