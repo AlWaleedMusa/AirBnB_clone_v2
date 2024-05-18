@@ -20,7 +20,11 @@ def cities_by_states():
     """Display an HTML page with a list of all of the State objects"""
     states = storage.all(State).values()
     cities = storage.all(City).values()
-    return render_template("8-cities_by_states.html", states=states, cities=cities)
+    return render_template(
+        "8-cities_by_states.html",
+        states=states,
+        cities=cities
+        )
 
 
 if __name__ == "__main__":
